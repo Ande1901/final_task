@@ -1,0 +1,119 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: gray">
+    <nav
+      class="navbar bg-body-tertiary"
+      style="background-color: black !important"
+    >
+      <form class="container-fluid justify-content-start">
+        <button type="button" class="btn btn-success me-2">Add Type</button>
+        <button type="button" class="btn btn-success">Add Hero</button>
+      </form>
+    </nav>
+    <div
+      class="row row-cols-1 row-cols-md-3 g-4 mx-auto"
+      style="
+        padding-right: 20px;
+        justify-content: center;
+        padding: 20px;
+        margin-right: 20px;
+      "
+    >
+      {{#each data}}
+        <div
+          class="card mx-2"
+          style="width: 18rem; justify-content: flex-start; padding-left: 20px"
+        >
+          <img
+            src="../image/meliodas-nanatsu-no-taizai-7akau6i10022ljmy.jpg"
+            class="card-img-top"
+            alt="wew"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{this.hero_name}}</h5>
+
+            <p class="text-danger">{{this.hero_type}}</p>
+
+            <a href="/detail/{{this.id}}" class="btn btn-primary">Detail</a>
+          </div>
+        </div>
+      {{/each}}
+      {{! <div class="card mx-2" style="width: 18rem">
+        <img src="../image/ban.jpg" class="card-img-top" alt="waw" />
+        <div class="card-body">
+          <h5 class="card-title">Ban</h5>
+          <p class="text-danger-emphasis">IMMORTAL</p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+      </div>
+      <div class="card mx-2" style="width: 18rem">
+        <img src="../image/escanor.jpg" class="card-img-top" alt="waw" />
+        <div class="card-body">
+          <h5 class="card-title">Escanor</h5>
+          <p class="text-danger">STRENGHT</p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+      </div>
+      <div class="card mx-2" style="width: 18rem">
+        <img src="../image/king.jpg" class="card-img-top" alt="waw" />
+        <div class="card-body">
+          <h5 class="card-title">King</h5>
+          <p class="text-primary">AGILITY</p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row row-cols-1 row-cols-md-3 g-4 mx-auto"
+      style="
+        padding-right: 20px;
+        justify-content: center;
+        padding: 20px;
+        margin-right: 20px;
+      "
+    >
+      <div class="card mx-2" style="width: 18rem">
+        <img src="../image/merlin.jpg" class="card-img-top" alt="waw" />
+        <div class="card-body">
+          <h5 class="card-title">Merlin</h5>
+          <p class="card-text">MAGE</p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+      </div>
+      <div class="card mx-2" style="width: 18rem">
+        <img src="../image/diane.jpg" class="card-img-top" alt="waw" />
+        <div class="card-body">
+          <h5 class="card-title">Diane</h5>
+          <p class="text-success">HP</p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+      </div>
+      <div class="card mx-2" style="width: 18rem">
+        <img src="../image/gilthunder.jpg" class="card-img-top" alt="waw" />
+        <div class="card-body">
+          <h5 class="card-title">Gilthunder</h5>
+          <p class="card-text">NPC</p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+      </div>
+      <div class="card mx-2" style="width: 18rem">
+        <img src="../image/gowther.jpg" class="card-img-top" alt="waw" />
+        <div class="card-body">
+          <h5 class="card-title">Gowther</h5>
+          <p class="text-success">HP</p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+      </div> }}
+    </div>
+  </body>
+</html>
