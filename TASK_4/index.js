@@ -46,6 +46,8 @@ app.use((req, res, next) => {
 
 app.get("/", renderIndex);
 app.get("/detail/:id", renderDetail);
+app.get("/add-heroes", renderAddHeroes);
+app.post("/add-heroes", upload.single("image"), postAddHeroes);
 
 async function renderIndex(req, res) {
   const query = `SELECT *
@@ -70,6 +72,21 @@ async function renderDetail(req, res) {
   res.render("detail", {
     hero: result[0],
   });
+}
+
+async function renderAddHeroes(req, res) {
+  res.render("add-heroes");
+}
+
+async function postAddHeroes(req, res) {
+  const value = [req.body.name, req.body.type, req.file.filename];
+  const heroes = `INSERT INTO "Hero" (hero_name, hero_type, image) VALUES($1, $2, $3)`;
+
+  await db.query(heroes, {
+    type: QueryTypes.INSERT,
+    bind: value,
+  });
+  res.redirect("/");
 }
 
 app.listen(port, () => {
